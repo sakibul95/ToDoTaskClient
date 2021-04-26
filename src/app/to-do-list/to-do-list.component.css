@@ -1,0 +1,42 @@
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+  }
+  .dark-modal .close {
+    color: white;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;
+  }
+#LogOut-button {
+  float: right;
+  margin-top: -2.6rem;
+  margin-right: 0.5rem;
+}
+
+th {
+  text-align:center
+}
+
+thead>tr>:nth-child(2){
+  text-align:left;
+ }
+
+tbody>tr>:nth-child(1){
+  width:2rem;
+  text-align:center;
+ }
+
+tbody>tr>:nth-child(2){
+  width:35rem;
+  text-align:left;
+ }
+
+ tbody>tr>:nth-child(3){
+  text-align:center;
+ }
+
+ tbody>tr>:nth-child(4){
+  text-align:center;
+ }
+

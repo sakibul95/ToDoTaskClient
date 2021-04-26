@@ -1,0 +1,68 @@
+
+<h2 style="text-align:center"> List All the task that need to be done.</h2> 
+
+<button type="button" id="LogOut-button" class="btn btn-outline-primary" (click)="logOut()">LogOut</button>
+
+<br>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="a12" style="float:left;width:100%;text-align:left; margin-bottom:10px;">
+                    <div style="float:left;width:70%;">
+                        <input type="text" placeholder="Add the task" [(ngModel)]="taskName" [ngModelOptions]="{standalone:true}" style="width: 100%;height: 2.5rem;">
+                    </div>
+                    <div style="float:left;width:30%;">
+                        <button type="submit" id="Add-button" class="btn btn-outline-success" (click)="AddTaskToList()">Add</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <div style="float:right;">
+                    <button type="button" class="btn btn-success" id="Save-button" (click)="SaveTasks('')" style="margin-right: 0.2rem;">Save</button>
+                    <button type="button" class="btn btn-danger" id="Delete-button" (click)="DeleteTasks()">Delete All</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>SLNo</th>
+                        <th>Task</th>
+                        <th>Is Complete</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let dataItem of ItemsList">
+                        <td>{{dataItem.SLNo}}</td>
+                        <td>{{dataItem.Task}}</td>
+                        <td> <input type="checkbox" [(ngModel)]="dataItem.IsComplete" [ngModelOptions]="{standalone:true}" (change)="UpdatingCheckBox(dataItem)"> </td>
+    
+                        <td>
+                            <button type="button" class="btn btn-light mr-1"
+                            (click)="deleteItem(dataItem)"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                              </svg>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class="col-md-2"></div>
+
+    
+      
+      
+
+</div>
+
